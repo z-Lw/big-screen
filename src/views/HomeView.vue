@@ -1,105 +1,49 @@
 <template>
-  <div class="home" id="root" >
-    <header></header>
-    <main>
-      <section class="section1">
-        <div class="bordered 管辖统计">
-          <h2>案发派出所管辖统计</h2>
-          <div  class="chart" ref="chart">
-
-          </div>
-        </div>
-      </section>
-      <section class="bordered section2"></section>
-      <section class="bordered section3"></section>
-      <section class="bordered section4"></section>
-      <section class="bordered section5"></section>
-    </main>
-
+  <div id="root">
+      <div class="home">
+          <header></header>
+          <main>
+            <section class="section1">
+              <chart1/>
+              <chart2/>
+            </section>
+            <section class="bordered section2"></section>
+            <section class="bordered section3"></section>
+            <section class="bordered section4"></section>
+            <section class="bordered section5"></section>
+          </main>
+          <footer>
+            {{`${year}-${mouth}-${day}`}}
+          </footer>
+  </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue';
-import * as echarts from 'echarts';
-const clientWidth = document.documentElement.clientWidth
-const clientHeight = document.documentElement.clientHeight
-let pageWidth: string | number|any
-pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth;
-const pageHeight = pageWidth/(16/9)
+import global from '@/global';
+import chart1 from '../components/Chart1.vue'
+import chart2 from '../components/Chart2.vue'
+
 @Component({
-  components: {
-    HelloWorld,
-  },
+  components: {chart1,chart2},
 })
 export default class HomeView extends Vue {
-
-
-  px(n: number){
-    return n / 2420 * pageWidth;
-  }
+  year = new Date().getFullYear();
+  mouth =new Date().getMonth()
+  day = new Date().getDay()
 mounted(){
   const string = `<style>html{
-    font-size: ${pageWidth/100}px;
+    font-size: ${global.pageWidth/100}px;
 }</style>`
   document.write(string)
   let root :HTMLDivElement |null
   root=document.querySelector('#root')
   if(root){
-    root.style.width=pageWidth+'px'
-    root.style.height=pageHeight+'px'
-    root.style.marginTop =(clientHeight - pageHeight ) / 2 + 'px'
+    // root.style.width=global.pageWidth+'px'
+    root.style.height=global.pageHeight+'px'
+    root.style.marginTop =(document.documentElement.clientHeight - global.pageHeight ) / 2 + 'px'
   }
-
-  const myChart = echarts.init(this.$refs.chart as HTMLDivElement);
-  myChart.setOption({
-    textStyle: {
-      fontSize: this.px(12),
-      color: '#79839E'
-    },
-    title: {show: false},
-    legend: {show: false},
-    xAxis: {
-      data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
-      axisTick: {show: false},
-      axisLine: {
-        lineStyle: {color: '#083B70'}
-      },
-      axisLabel: {
-        fontSize: this.px(12),
-        formatter(val: string) {
-          if (val.length > 2) {
-            const array = val.split('');
-            array.splice(2, 0, '\n');
-            return array.join('');
-          } else {
-            return val;
-          }
-        }
-      },
-    },
-    grid: {
-      x:this.px(40) ,
-      y: this.px(40),
-      x2: this.px(40),
-      y2: this.px(40),
-    },
-    yAxis: {
-      splitLine: {show: false},
-      axisLine: {
-        show: true,
-        lineStyle: {color: '#083B70'}
-      },
-      axisLabel: {
-        fontSize: this.px(12)
-      }
-    },
-    series: [{
-      type: 'bar',
-      data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
-    }]
-  });
 }
 }
 </script>
@@ -108,16 +52,31 @@ mounted(){
 .home{
   display: flex;
   flex-direction: column;
+  flex:1;
   background: #010310;
   color: white;
-
+  font-size: px(16);
  header{
-
-   height: px(315);
+   height: px(99);
    border: 1px solid red;
+   background-size: cover;
+   width: px(2420);
+   margin: 0 auto;
+ }
+  > footer {
+    height: px(68);
+    border: 1px solid #0d2d59;
+    margin: px(20) 0 1px;
+    border-radius: 4px;
+    background: #0c0d2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
   > main {
     flex: 1;
+    width: px(2420);
+    margin: 0 auto;
     padding-top: px(30);
     display: grid;
     grid-template:
@@ -126,33 +85,12 @@ mounted(){
     grid-column-gap: px(28);
     grid-row-gap: px(28);
     > section { text-align: center;}
-      .bordered{
-      border: 1px solid #0764bc;
-      border-radius: 4px;
-      position: relative;
-      box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
-      background: #0c1139;
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        border-radius: 4px;
-        box-shadow: 17px 0 0 -16px #0e325f,
-        -17px 0 0 -16px #0e325f,
-        0 17px 0 -16px #0e325f,
-        0 -17px 0 -16px #0e325f,
-        9px 0 0 -8px #0d4483,
-        -9px 0 0 -8px #0d4483,
-        0 9px 0 -8px #0d4483,
-        0 -9px 0 -8px #0d4483,;
-      }
-    }
+
     > .section1 {
       grid-area: box1;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     > .section2 {
       grid-area: box2;
@@ -169,26 +107,6 @@ mounted(){
     > .section5 {
       grid-area: box5;
 
-    }
-    .管辖统计 {
-      height: px(315);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h2 {
-        flex-shrink: 0;
-        border: 1px solid #0a5299;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        font-size: px(22);
-        line-height: px(24);
-        padding: px(10) px(28);
-        text-shadow: 0 0 px(3) white;
-      }
-      .chart{
-        flex: 1;
-        width: 100%;
-      }
     }
   }
 }
