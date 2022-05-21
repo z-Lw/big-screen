@@ -16,6 +16,14 @@
             </section>
             <section class="bordered section4">
                 <chart6/>
+                <div class="bordered 年龄">
+                    <h2>犯罪人员年龄段分布</h2>
+                    <div class="charts">
+                        <chart7/>
+                        <chart8/>
+                        <chart9/>
+                    </div>
+                </div>
             </section>
             <section class="bordered section5"></section>
           </main>
@@ -35,9 +43,12 @@ import chart3 from '../components/Chart3.vue'
 import chart4 from '../components/Chart4.vue'
 import chart5 from '../components/Chart5.vue'
 import chart6 from '../components/Chart6.vue'
+import chart7 from '../components/Chart7.vue'
+import chart8 from '../components/Chart8.vue'
+import chart9 from '../components/Chart9.vue'
 
 @Component({
-  components: {chart1,chart2,chart3,chart4,chart5,chart6},
+  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9},
 })
 export default class HomeView extends Vue {
   year = new Date().getFullYear();
@@ -136,11 +147,38 @@ mounted(){
       grid-area: box3;
     }
     > .section4 {
-      grid-area: box4;
+        grid-area: box4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     > .section5 {
       grid-area: box5;
     }
-  }
+      .年龄 {
+          height: px(363);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          h2 {
+              flex-shrink: 0;
+              border: 1px solid #0a5299;
+              border-bottom-left-radius: 4px;
+              border-bottom-right-radius: 4px;
+              font-size: px(22);
+              line-height: px(24);
+              padding: px(10) px(28);
+              text-shadow: 0 0 px(3) white;
+          }
+          .charts {
+              width: 100%;
+              flex: 1;
+              display: flex;
+              padding: px(30);
+          }
+      }
 }
+}
+
+
 </style>
