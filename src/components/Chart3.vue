@@ -1,7 +1,7 @@
 <template>
     <div class="bordered 发案趋势">
         <h2>发案趋势分析</h2>
-        <div ref=chart class="chart"/>
+        <div ref="chart" class="chart"/>
     </div>
 
 </template>
@@ -79,6 +79,7 @@
          lineStyle: {width: global.px(2)}
        }))
    }))
+
     }
 }
 </script>
