@@ -2,7 +2,7 @@
 
         <div class="bordered 破获排名">
             <h2>案件破获排名</h2>
-            <div ref=chart class="chart"/>
+            <div ref="chart" class="chart"/>
             <div class="legend">
                 <span class="first"/> 破案排名1
                 <span class="second"/> 破案排名2
