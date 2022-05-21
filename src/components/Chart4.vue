@@ -61,7 +61,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     @import '../index.scss';
     .案发时段 {
         height:px(363);
@@ -81,7 +81,6 @@
         .chart{
             flex: 1;
             width: 100%;
-
         }
     }
 </style>
