@@ -2,7 +2,7 @@
     <div class="bordered 籍贯">
         <h2>全市犯罪人员籍贯分布地</h2>
         <div class="wrapper">
-            <div ref=chart class="chart"/>
+            <div ref="chart" class="chart"/>
             <div class="legend bordered">
                 <span class="icon" :style="{background: colors['甘肃省']}"/>甘肃籍
                 <span class="icon " :style="{background: colors['四川省']}"/>四川籍
