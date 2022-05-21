@@ -129,28 +129,5 @@ import global from '@/global';
             }
         }
     }
-    .bordered{
-        border: 1px solid #0764bc;
-        border-radius: 4px;
-        position: relative;
-        box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
-        background: #0c1139;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            border-radius: 4px;
-            box-shadow: 17px 0 0 -16px #0e325f,
-            -17px 0 0 -16px #0e325f,
-            0 17px 0 -16px #0e325f,
-            0 -17px 0 -16px #0e325f,
-            9px 0 0 -8px #0d4483,
-            -9px 0 0 -8px #0d4483,
-            0 9px 0 -8px #0d4483,
-            0 -9px 0 -8px #0d4483,;
-        }
-    }
+
 </style>

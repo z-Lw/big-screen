@@ -1,12 +1,9 @@
 <template>
-
         <div class="bordered 管辖统计">
             <h2>案发派出所管辖统计</h2>
             <div  class="chart" ref="chart">
-
             </div>
         </div>
-
 
 </template>
 
@@ -14,10 +11,9 @@
   import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
   import * as echarts from 'echarts';
-  import global from '@/global';
+  import global from '../global';
   @Component
   export default class Chart1 extends Vue {
-
     mounted(){
       const myChart = echarts.init(this.$refs.chart as HTMLDivElement);
       myChart.setOption({
@@ -72,7 +68,6 @@
 </script>
 <style lang="scss" scoped>
     @import '../index.scss';
-
     .管辖统计 {
         height: px(315);
         display: flex;
@@ -94,28 +89,5 @@
 
         }
     }
-    .bordered{
-        border: 1px solid #0764bc;
-        border-radius: 4px;
-        position: relative;
-        box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
-        background: #0c1139;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            border-radius: 4px;
-            box-shadow: 17px 0 0 -16px #0e325f,
-            -17px 0 0 -16px #0e325f,
-            0 17px 0 -16px #0e325f,
-            0 -17px 0 -16px #0e325f,
-            9px 0 0 -8px #0d4483,
-            -9px 0 0 -8px #0d4483,
-            0 9px 0 -8px #0d4483,
-            0 -9px 0 -8px #0d4483,;
-        }
-    }
+
 </style>
