@@ -1,13 +1,13 @@
 <template>
-    <div class="年龄段-图1">
+    <div class="chart11">
         <div class="chart">
             <div class="main" ref="chart"/>
             </div>
             <div class="legend">
-                <span :style="{background: colors[0]}" />刑事
-                <span :style="{background: colors[1]}" />民事
-                <span :style="{background: colors[2]}"/>经济
-                <span :style="{background: colors[3]}" />其他
+                <span :style="{background: colors[0]}" />985
+                <span :style="{background: colors[1]}" />211
+                <span :style="{background: colors[2]}"/>双非
+                <span :style="{background: colors[3]}" />二本
             </div>
         </div>
 </template>
@@ -49,10 +49,10 @@
               shadowColor: 'rgba(0, 0, 0, 0.5)'
             },
             data: [
-              {value: 0.36, name: '刑事案件'},
-              {value: 0.20, name: '民事案件'},
-              {value: 0.18, name: '经济案件'},
-              {value: 0.24, name: '其他案件'},
+              {value: 0.36, name: '985'},
+              {value: 0.20, name: '211'},
+              {value: 0.18, name: '双非'},
+              {value: 0.24, name: '二本'},
             ]
           }
         ]
@@ -63,7 +63,7 @@
 
 <style lang="scss" scoped>
     @import '../index.scss';
-    .年龄段-图1 {
+    .chart11 {
         flex: 1;
         display: flex;
         flex-direction: column;

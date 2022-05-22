@@ -14,21 +14,10 @@
       const myChart = echarts.init(this.$refs.chart as HTMLDivElement);
       myChart.setOption(global.createEchartsOptions({
         xAxis: {
-          data: ['入室抢劫', '当街偷盗', '团伙诈骗', '刑事案件', '民事案件'],
+          data: ['985', '211', '双一流', '双非', '二本'],
           axisTick: {show: false},
           axisLine: {
             lineStyle: {color: '#083B70'}
-          },
-          axisLabel: {
-            formatter(val: string) {
-              if (val.length > 2) {
-                const array = val.split('');
-                array.splice(2, 0, '\n');
-                return array.join('');
-              } else {
-                return val;
-              }
-            }
           },
         },
 

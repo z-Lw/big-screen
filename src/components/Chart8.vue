@@ -1,15 +1,15 @@
 <template>
-    <div class="年龄段-图2">
+    <div class="去向">
         <div class="chart">
             <div class="main" ref="chart"/>
-                <div class="text">年龄段</div>
+                <div class="text">去向</div>
         </div>
         <div class="legend">
-            <span :style="{background: colors[0]}" />10-20
-            <span :style="{background: colors[1]}" />20-30
-            <span :style="{background: colors[2]}" />30-40
-            <span :style="{background: colors[3]}"/> 40-50
-            <span :style="{background: colors[4]}" />50-60
+            <span :style="{background: colors[0]}" />考研
+            <span :style="{background: colors[1]}" />考公
+            <span :style="{background: colors[2]}" />就业
+            <span :style="{background: colors[3]}"/> 创业
+            <span :style="{background: colors[4]}" />其他
         </div>
     </div>
 </template>
@@ -48,11 +48,11 @@
               borderWidth: global.px(4)
             },
             data: [
-              {value: 0.07, name: '10-20'},
-              {value: 0.10, name: '20-30'},
-              {value: 0.23, name: '30-40'},
-              {value: 0.28, name: '40-50'},
-              {value: 0.32, name: '50-60'},
+              {value: 0.07, name: '考研'},
+              {value: 0.10, name: '考公'},
+              {value: 0.23, name: '就业'},
+              {value: 0.28, name: '创业'},
+              {value: 0.32, name: '其他'},
             ]
           }
         ]
@@ -63,7 +63,7 @@
 
 <style lang="scss" scoped>
     @import '../index.scss';
-    .年龄段-图2 {
+    .去向 {
         flex: 1;
         display: flex;
         flex-direction: column;

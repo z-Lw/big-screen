@@ -1,6 +1,6 @@
 <template>
-    <div class="年龄段-图3">
-        <h3>犯罪年龄趋势图</h3>
+    <div class="创业">
+        <h3>创业趋势图</h3>
         <div ref="chart" class="chart">
         </div>
     </div>
@@ -62,7 +62,7 @@
 
 <style lang="scss" scoped>
     @import '../index.scss';
-    .年龄段-图3 {
+    .创业 {
         border: 1px solid #08397d;
         flex: 1;
         display: flex;

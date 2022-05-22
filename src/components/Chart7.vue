@@ -1,5 +1,5 @@
 <template>
-    <div class="年龄段-图1">
+    <div class="性别">
         <div class="chart">
             <div class="main" ref="chart" />
             <div class="text">性别</div>
@@ -46,8 +46,8 @@
               borderWidth: global.px(4)
             },
             data: [
-              {value: 0.2, name: '女'},
-              {value: 0.8, name: '男'},
+              {value: 0.6, name: '女'},
+              {value: 0.4, name: '男'},
             ]
           }
         ]
@@ -59,7 +59,7 @@
 
 <style lang="scss" scoped>
     @import '../index.scss';
-        .年龄段-图1 {
+        .性别 {
             flex: 1;
             display: flex;
             flex-direction: column;

@@ -1,6 +1,6 @@
 <template>
-        <div class="bordered 管辖统计">
-            <h2>案发派出所管辖统计</h2>
+        <div class="bordered 统计">
+            <h2>应届生人数统计</h2>
             <div  class="chart" ref="chart">
             </div>
         </div>
@@ -68,7 +68,7 @@
 </script>
 <style lang="scss" scoped>
     @import '../index.scss';
-    .管辖统计 {
+    .统计 {
         height: px(315);
         display: flex;
         flex-direction: column;

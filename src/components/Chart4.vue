@@ -1,6 +1,6 @@
 <template>
-    <div class="bordered 案发时段">
-        <h2>案发时段分析</h2>
+    <div class="bordered 出国留学">
+        <h2>出国留学</h2>
         <div ref="chart" class="chart"/>
     </div>
 
@@ -19,7 +19,7 @@
         xAxis: {
           type: 'category',
           boundaryGap: false,
-          data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
+          data: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
           splitLine: {show: true, lineStyle: {color: '#073E78'}},
           axisTick: {show: false},
           axisLine: {show: false},
@@ -34,7 +34,7 @@
           }
         },
         series: [{
-          name: '故意伤人',
+          name: '出国留学',
           type: 'line',
           data: [
             0.15, 0.13, 0.11,
@@ -63,7 +63,7 @@
 
 <style lang="scss" >
     @import '../index.scss';
-    .案发时段 {
+    .出国留学 {
         height:px(363);
         display: flex;
         flex-direction: column;

@@ -1,7 +1,9 @@
 <template>
   <div id="root">
       <div class="home">
-          <header></header>
+          <header class="bordered">
+            <h2 class="content"> 应届生的去向调查数据 </h2>
+          </header>
           <main>
             <section class="section1">
               <chart1/>
@@ -17,7 +19,7 @@
             <section class="bordered section4">
                 <chart6/>
                 <div class="bordered 年龄">
-                    <h2>犯罪人员年龄段分布</h2>
+                    <h2>应届生人员分布</h2>
                     <div class="charts">
                         <chart7/>
                         <chart8/>
@@ -26,22 +28,22 @@
                 </div>
             </section>
               <section class="section5">
-                  <div class="bordered row1 案发类型">
-                      <h2>案发类型统计</h2>
+                  <div class="bordered row1 高校类型">
+                      <h2>高校类型统计</h2>
                       <div class="charts">
                           <chart10/>
                           <chart11/>
                       </div>
                   </div>
-                  <div class="bordered row2 案发街道">
-                      <h2>案发街道统计</h2>
+                  <div class="bordered row2 专业统计">
+                      <h2>专业统计</h2>
                       <div class="charts">
                           <chart12/>
                           <chart13/>
                       </div>
                   </div>
-                  <div class="bordered row3 作案手段">
-                      <h2>作案手段分析</h2>
+                  <div class="bordered row3 去向分析">
+                      <h2>就业去向分析</h2>
                       <chart14/>
                   </div>
               </section>
@@ -104,10 +106,15 @@ mounted(){
   font-size: px(16);
  header{
    height: px(99);
-   border: 1px solid red;
    background-size: cover;
    width: px(2420);
    margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     .content{
+         font-size: px(40);
+     }
  }
   > footer {
     height: px(68);
@@ -131,30 +138,6 @@ mounted(){
     grid-column-gap: px(28);
     grid-row-gap: px(28);
     > section { text-align: center;}
-      .bordered{
-          border: 1px solid #0764bc;
-          border-radius: 4px;
-          position: relative;
-          box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
-          background: #0c1139;
-          &::before {
-              content: '';
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              top: 0;
-              border-radius: 4px;
-              box-shadow: 17px 0 0 -16px #0e325f,
-              -17px 0 0 -16px #0e325f,
-              0 17px 0 -16px #0e325f,
-              0 -17px 0 -16px #0e325f,
-              9px 0 0 -8px #0d4483,
-              -9px 0 0 -8px #0d4483,
-              0 9px 0 -8px #0d4483,
-              0 -9px 0 -8px #0d4483,;
-          }
-      }
     > .section1 {
       grid-area: box1;
       display: flex;
@@ -191,7 +174,7 @@ mounted(){
             height: px(455);
         }
     }
-      .年龄, .案发类型, .案发街道, .作案手段 {
+      .年龄, .高校类型, .专业统计, .去向分析 {
           height: px(363);
           display: flex;
           flex-direction: column;
@@ -214,10 +197,35 @@ mounted(){
               padding: px(30);
           }
       }
-      .作案手段 {
+      .去向分析 {
           padding: 0 px(24);
       }
 }
+}
+.bordered{
+    border: 1px solid #0764bc;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 2px 0 #0e325f, inset 0 0 2px 0 #0e325f;
+    background: #0c1139;
+    &::before {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        border-radius: 4px;
+        box-shadow: 17px 0 0 -16px #0e325f,
+        -17px 0 0 -16px #0e325f,
+        0 17px 0 -16px #0e325f,
+        0 -17px 0 -16px #0e325f,
+        9px 0 0 -8px #0d4483,
+        -9px 0 0 -8px #0d4483,
+        0 9px 0 -8px #0d4483,
+        0 -9px 0 -8px #0d4483,;
+    }
 }
 
 

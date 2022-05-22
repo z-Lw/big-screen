@@ -1,11 +1,11 @@
 <template>
 
-        <div class="bordered 破获排名">
-            <h2>案件破获排名</h2>
+        <div class="bordered 去向排名">
+            <h2>应届生的去向</h2>
             <div ref="chart" class="chart"/>
             <div class="legend">
-                <span class="first"/> 破案排名1
-                <span class="second"/> 破案排名2
+                <span class="first"/> 就业
+                <span class="second"/> 考研
             </div>
         </div>
 
@@ -13,75 +13,98 @@
 </template>
 
 <script lang="ts">
-  import * as echarts from 'echarts';
-import Vue from 'vue';
-  import {Component} from 'vue-property-decorator';
-import global from '@/global';
+    import * as echarts from 'echarts';
+    import Vue from 'vue';
+    import {Component, Watch} from 'vue-property-decorator';
+    import global from '@/global';
   @Component
   export default class Chart2 extends Vue {
-    mounted(){
-      const myChart = echarts.init(this.$refs.chart as HTMLDivElement);
-      myChart.setOption(global.createEchartsOptions({
-        xAxis: {
-          type: 'value',
-          boundaryGap: [0, 0.01],
-          splitLine: {show: false},
-          axisLabel: {show: false}
-        },
-        yAxis: {
-          axisTick: {show: false},
-          type: 'category',
-          data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局',
-            '永登县公安局', '皋兰县公安局', '榆中县公安局', '新区公安局'],
-          axisLabel: {
-            formatter(val: string) {
-              return val.replace('公安局', '\n公安局');
-            }
-          }
-        },
-        grid: {
-          left: '0%',
-          right: '0%',
-          bottom: '8%',
-          top:'8%',
-          containLabel: true
-        },
-        series: [
-          {
-            name: '2011年',
-            type: 'bar',
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                  offset: 0,
-                  color: '#2034f9'
-                }, {
-                  offset: 1,
-                  color: '#04a1ff'
-                }]),
-              }
-            }
-          },
-          {
-            name: '2012年',
-            type: 'bar',
-            data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-            itemStyle: {
-              normal: {
-                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                  offset: 0,
-                  color: '#b92ae8'
-                }, {
-                  offset: 1,
-                  color: '#6773e7'
-                }]),
-              }
-            }
-          }
-        ]
-      }));
+    myChart:any
+     data = [
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+      {name: '广东省', 2011: 2, 2012: 3},
+    ]
+     x(data: { name: string; 2011: number; 2012: number; }[]){
+       this.myChart.setOption(global.createEchartsOptions({
+         xAxis: {
+           type: 'value',
+           boundaryGap: [0, 0.01],
+           splitLine: {show: false},
+           axisLabel: {show: false}
+         },
+         yAxis: {
+           axisTick: {show: false},
+           type: 'category',
+           data: data.map(i => i.name),
 
+         },
+         grid: {
+           left: '0%',
+           right: '0%',
+           bottom: '8%',
+           top:'8%',
+           containLabel: true
+         },
+         series: [
+           {
+             name: '2011年',
+             type: 'bar',
+             data: data.map(i => i[2012]),
+             itemStyle: {
+               normal: {
+                 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                   offset: 0,
+                   color: '#2034f9'
+                 }, {
+                   offset: 1,
+                   color: '#04a1ff'
+                 }]),
+               }
+             }
+           },
+           {
+             name: '2012年',
+             type: 'bar',
+             data: data.map(i => i[2011]),
+             itemStyle: {
+               normal: {
+                 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                   offset: 0,
+                   color: '#b92ae8'
+                 }, {
+                   offset: 1,
+                   color: '#6773e7'
+                 }]),
+               }
+             }
+           }
+         ]
+       }));
+     }
+    mounted(){
+        this.myChart = echarts.init(this.$refs.chart as HTMLDivElement);
+        this.x(this.data)
+      setInterval(()=>{
+        const newData = [
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: Math.random() * 10, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012:Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+          {name: '广东省', 2011: 2, 2012: Math.random() * 10},
+        ];
+        this.x(newData);
+      },1000)
     }
   }
 </script>
@@ -89,7 +112,7 @@ import global from '@/global';
 <style lang="scss" scoped>
     @import '../index.scss';
 
-    .破获排名 {
+    .去向排名 {
         height: px(423);
         display: flex;
         flex-direction: column;

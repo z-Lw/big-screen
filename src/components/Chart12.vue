@@ -1,5 +1,5 @@
 <template>
-    <div class="年龄段-图1">
+    <div class="chart12">
         <div class="chart">
             <div class="main" ref="chart"/>
             </div>
@@ -16,13 +16,13 @@
   @Component
   export default class chart12 extends Vue {
      data = [
-      {value: 0.08, name: '东岗路'},
-      {value: 0.06, name: '段家滩'},
-      {value: 0.11, name: '雁北'},
-      {value: 0.09, name: '五泉山'},
-      {value: 0.12, name: '中山路'},
-      {value: 0.06, name: '庆阳路'},
-      {value: 0.08, name: '武都路'},
+      {value: 0.08, name: '计算机'},
+      {value: 0.06, name: '数学'},
+      {value: 0.11, name: '文学'},
+      {value: 0.09, name: '英语'},
+      {value: 0.12, name: '音乐'},
+      {value: 0.06, name: '美术'},
+      {value: 0.08, name: '体育'},
     ];
 mounted(){
   const {data} =this
@@ -66,7 +66,7 @@ mounted(){
 </script>
 
 <style lang="scss" scoped>
-    .年龄段-图1 {
+    .chart12 {
         flex: 1;
         display: flex;
         flex-direction: column;

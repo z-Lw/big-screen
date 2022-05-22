@@ -1,11 +1,11 @@
 <template>
-    <div class="战果">
-        <h2>往年战果数对比</h2>
+    <div class="结果">
+        <h2>往年应届生对比</h2>
         <table>
             <thead>
             <tr>
-                <th>年份</th><th>破案数</th><th>抓获嫌疑人</th><th>并串案件</th><th>现勘录入</th>
-                <th>视侦录入</th><th>合成案件数</th><th>合计</th>
+                <th>年份</th><th>考研</th><th>就业</th><th>创业</th><th>出国留学</th>
+                <th>考公</th><th>其他</th><th>合计</th>
             </tr>
             </thead>
             <tbody>
@@ -36,11 +36,12 @@
 
 <style lang="scss" scoped>
     @import '../index.scss';
-    .战果 {
+    .结果 {
         height: px(315);
         display: flex;
         flex-direction: column;
         align-items: center;
+
         h2 {
             flex-shrink: 0;
             border: 1px solid #0a5299;
@@ -51,8 +52,6 @@
             padding: px(10) px(28);
             text-shadow: 0 0 px(3) white;
         }
-    }
-    .战果 {
         > table {
             margin-top: px(38);
             border-collapse: collapse;

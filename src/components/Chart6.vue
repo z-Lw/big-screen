@@ -1,12 +1,12 @@
 <template>
     <div class="bordered 籍贯">
-        <h2>全市犯罪人员籍贯分布地</h2>
+        <h2>应届生人员籍贯分布地</h2>
         <div class="wrapper">
             <div ref="chart" class="chart"/>
             <div class="legend bordered">
-                <span class="icon" :style="{background: colors['甘肃省']}"/>甘肃籍
-                <span class="icon " :style="{background: colors['四川省']}"/>四川籍
-                <span class="icon"  :style="{background: colors['青海省']}"/>青海籍
+                <span class="icon" :style="{background: colors['甘肃省']}"/>甘岭籍
+                <span class="icon " :style="{background: colors['四川省']}"/>边城籍
+                <span class="icon"  :style="{background: colors['青海省']}"/>寒国籍
             </div>
             <div class="notes">此地图仅显示了中国的部分区域</div>
         </div>
