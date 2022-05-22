@@ -25,7 +25,23 @@
                     </div>
                 </div>
             </section>
-            <section class="bordered section5"></section>
+              <section class="section5">
+                  <div class="bordered row1 案发类型">
+                      <h2>案发类型统计</h2>
+                      <div class="charts">
+                          <chart10/>
+                      </div>
+                  </div>
+                  <div class="bordered row2 案发街道">
+                      <h2>案发街道统计</h2>
+                      <div class="charts">
+
+                      </div>
+                  </div>
+                  <div class="bordered row3 作案手段">
+                      <h2>作案手段分析</h2>
+                  </div>
+              </section>
           </main>
           <footer>
             {{`${year}-${mouth}-${day}`}}
@@ -46,9 +62,10 @@ import chart6 from '../components/Chart6.vue'
 import chart7 from '../components/Chart7.vue'
 import chart8 from '../components/Chart8.vue'
 import chart9 from '../components/Chart9.vue'
+import chart10 from '../components/Chart10.vue'
 
 @Component({
-  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9},
+  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10},
 })
 export default class HomeView extends Vue {
   year = new Date().getFullYear();
@@ -154,8 +171,20 @@ mounted(){
     }
     > .section5 {
       grid-area: box5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > .row1 {
+            height: px(317);
+        }
+        > .row2 {
+            height: px(317);
+        }
+        > .row3 {
+            height: px(455);
+        }
     }
-      .年龄 {
+      .年龄, .案发类型, .案发街道, .作案手段 {
           height: px(363);
           display: flex;
           flex-direction: column;
@@ -170,6 +199,7 @@ mounted(){
               padding: px(10) px(28);
               text-shadow: 0 0 px(3) white;
           }
+
           .charts {
               width: 100%;
               flex: 1;

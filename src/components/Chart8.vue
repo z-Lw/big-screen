@@ -73,8 +73,9 @@
             height: px(40);
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
+            padding-right: px(10);
             > span {
                 display: inline-block;
                 width: px(16);
