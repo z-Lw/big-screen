@@ -74,16 +74,7 @@
             > .main {
                 flex: 1;
             }
-            > .text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: #33a4fa;
-                font-size: px(40);
-                text-shadow: 0 0 px(20) #33a4fa;
-                font-weight: bold;
-            }
+
         }
         .legend {
             height: px(40);
@@ -99,8 +90,7 @@
                 border-radius: px(4);
                 margin: 0 px(10);
             }
-            .male {background: #33a4fa;}
-            .female {background: #8d70f8;}
+
         }
     }
 </style>

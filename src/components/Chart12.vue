@@ -15,7 +15,6 @@
 
   @Component
   export default class chart12 extends Vue {
-     colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
      data = [
       {value: 0.08, name: '东岗路'},
       {value: 0.06, name: '段家滩'},
@@ -24,11 +23,9 @@
       {value: 0.12, name: '中山路'},
       {value: 0.06, name: '庆阳路'},
       {value: 0.08, name: '武都路'},
-      {value: 0.08, name: '酒泉路'},
-      {value: 0.08, name: '天水路'},
     ];
 mounted(){
-  const {data,colors} =this
+  const {data} =this
   const myChart = echarts.init(this.$refs.chart as HTMLDivElement);
   myChart.setOption(global.createEchartsOptions({
     xAxis: {show: false},
@@ -81,33 +78,6 @@ mounted(){
             > .main {
                 flex: 1;
             }
-            > .text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: #33a4fa;
-                font-size: px(40);
-                text-shadow: 0 0 px(20) #33a4fa;
-                font-weight: bold;
-            }
-        }
-        .legend {
-            height: px(40);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding-right: px(10);
-            > span {
-                display: inline-block;
-                width: px(40);
-                height: px(20);
-                border-radius: px(4);
-                margin: 0 px(10);
-            }
-            .male {background: #33a4fa;}
-            .female {background: #8d70f8;}
         }
     }
 </style>

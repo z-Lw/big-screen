@@ -30,12 +30,14 @@
                       <h2>案发类型统计</h2>
                       <div class="charts">
                           <chart10/>
+                          <chart11/>
                       </div>
                   </div>
                   <div class="bordered row2 案发街道">
                       <h2>案发街道统计</h2>
                       <div class="charts">
-
+                          <chart12/>
+                          <chart13/>
                       </div>
                   </div>
                   <div class="bordered row3 作案手段">
@@ -63,9 +65,12 @@ import chart7 from '../components/Chart7.vue'
 import chart8 from '../components/Chart8.vue'
 import chart9 from '../components/Chart9.vue'
 import chart10 from '../components/Chart10.vue'
+import chart11 from '../components/Chart11.vue'
+import chart12 from '../components/Chart12.vue'
+import chart13 from '../components/Chart13.vue'
 
 @Component({
-  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10},
+  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10,chart11,chart12,chart13},
 })
 export default class HomeView extends Vue {
   year = new Date().getFullYear();
