@@ -62,6 +62,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../index.scss';
     .年龄段-图1 {
         flex: 1;
         display: flex;

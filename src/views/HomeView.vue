@@ -42,6 +42,7 @@
                   </div>
                   <div class="bordered row3 作案手段">
                       <h2>作案手段分析</h2>
+                      <chart14/>
                   </div>
               </section>
           </main>
@@ -68,9 +69,10 @@ import chart10 from '../components/Chart10.vue'
 import chart11 from '../components/Chart11.vue'
 import chart12 from '../components/Chart12.vue'
 import chart13 from '../components/Chart13.vue'
+import chart14 from '../components/Chart14.vue'
 
 @Component({
-  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10,chart11,chart12,chart13},
+  components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10,chart11,chart12,chart13,chart14},
 })
 export default class HomeView extends Vue {
   year = new Date().getFullYear();
@@ -211,6 +213,9 @@ mounted(){
               display: flex;
               padding: px(30);
           }
+      }
+      .作案手段 {
+          padding: 0 px(24);
       }
 }
 }
