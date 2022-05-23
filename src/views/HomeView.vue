@@ -77,10 +77,18 @@ import chart14 from '../components/Chart14.vue'
   components: {chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10,chart11,chart12,chart13,chart14},
 })
 export default class HomeView extends Vue {
-  year = new Date().getFullYear();
-  mouth =new Date().getMonth()
-  day = new Date().getDay()
+  get year(){
+    return new Date().getFullYear();
+  }
+    get mouth(){
+        return new Date().getMonth()+1
+    }
+    get day(){
+    return new Date().getDate()
+    }
 mounted(){
+  const day=new Date().getDay()
+  console.log(day)
   const string = `<style>html{
     font-size: ${global.pageWidth/100}px;
 }</style>`

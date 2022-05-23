@@ -1,7 +1,6 @@
 const clientWidth = document.documentElement.clientWidth
 const clientHeight = document.documentElement.clientHeight
-let pageWidth: string | number|any
-pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth;
+const pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth;
 const pageHeight = pageWidth/(16/9)
 const px=(n: number)=>{
   return n / 2420 * pageWidth;
@@ -38,6 +37,7 @@ const createEchartsOptions = (options :any) => {
   }
   return result;
 };
+
 export default {
   pageWidth,pageHeight,px,baseEchartOptions,createEchartsOptions
 }
